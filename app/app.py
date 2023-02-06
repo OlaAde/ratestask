@@ -11,10 +11,9 @@ app = Flask(__name__)
 
 username = os.environ.get("POSTGRES_USERNAME")
 password = os.environ.get("POSTGRES_PASSWORD")
-database = os.environ.get("POSTGRES_DATABASE")
+host = os.environ.get("POSTGRES_HOST")
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://{}:{}@localhost/{}".format(username, password,
-                                                                                             database)
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://{}:{}@{}".format(username, password, host)
 db = SQLAlchemy(app)
 
 

@@ -1,0 +1,6 @@
+Flask~=2.2.2
+marshmallow~=3.19.0
+SQLAlchemy~=2.0.1
+Flask-SQLAlchemy~=3.0.3
+Flask-Marshmallow~=0.14.0
+psycopg2-binary==2.8.5

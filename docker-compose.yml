@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  db:
+    build:
+      context: ./db
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=ratestask
+  app:
+    build:
+      context: ./app
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=ratestask
+      - FLASK_DEBUG=1
+    ports:
+      - "5000:5000"

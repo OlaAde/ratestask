@@ -135,3 +135,14 @@ docker exec -e PGPASSWORD=ratestask -it ratestask psql -U postgres
 Keep in mind that any data written in the Docker container will
 disappear when it shuts down. The next time you run it, it will start
 with a clean state.
+
+
+
+HOW TO RUN and TEST:
+
+```
+docker-compose run
+```
+
+This runs the database and then the app. The app is exposed on the port 5000 of the localhost.
+
