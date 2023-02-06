@@ -13,7 +13,7 @@ username = os.environ.get("POSTGRES_USERNAME")
 password = os.environ.get("POSTGRES_PASSWORD")
 host = os.environ.get("POSTGRES_HOST")
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:2468@localhost/xeneta".format(username, password, host)
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://{}:{}@{}".format(username, password, host)
 db = SQLAlchemy(app)
 
 yyyy_mm_dd_regex = '^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$'
